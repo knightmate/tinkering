@@ -1,0 +1,105 @@
+<html>
+
+
+<script>
+
+    const customCookie = function(){
+         
+        const map=new Map();
+       const  cookieStore=new Map();
+       const cookieKey="cookieKey"
+       const  expiryKey="max-age";
+
+        
+        Object.defineProperty(document, 'myCookie', {
+            
+             set:(val)=>{
+
+             const {key,value,options}= parseVal(val);
+              let expiry=Infinity;
+               if(options[expiryKey]){
+                expiry=Date.now()+options[expiryKey]*1000;
+              }
+              options[expiryKey]=expiry
+              cookieStore.set(key,{value,options});
+
+
+            },
+            get:()=>{
+
+              const result=[];
+              const keys=cookieStore.keys();
+ 
+               for(key of keys){
+
+                const cookie=cookieStore.get(key)  
+                if(cookie){
+               const  {value,options}=cookie;
+               if(options[expiryKey]>Date.now()){
+                result.push(`${key}=${value}`)
+               }
+
+                 }
+               }
+ 
+            
+ 
+              return result.join(";");
+
+            },
+        });
+
+
+        const parseVal=(cookieData)=>{
+
+          // "isThisValid:true;max-age=3"
+
+          const [key_val,...options]=cookieData.split(';')
+
+          const [key,value]=key_val.split(":");
+
+          let options_={};
+
+             
+           for(option of options){
+            const [key,val]=option.split("=")
+            options_[key]=val;
+ 
+           }
+
+ 
+        
+          return {value,key,options:options_}
+
+        }
+
+
+
+    }
+    customCookie()
+    document.myCookie = "isThisValid:true;max-age=3";
+    document.myCookie = "name:Meghraj;";
+
+ 
+ 
+    setTimeout(() => {
+
+        console.log( document.myCookie);
+
+    }, 2000);
+    setTimeout(() => {
+
+console.log( document.myCookie);
+
+}, 4000);
+
+</script>
+
+<body>
+
+
+
+
+</body>
+
+</html>
