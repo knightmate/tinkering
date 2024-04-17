@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MachineCodingRound-React-JS/static/css/main.f0efcd89.css",
+    "main.js": "/MachineCodingRound-React-JS/static/js/main.c85ba8d0.js",
+    "static/js/453.a4602e17.chunk.js": "/MachineCodingRound-React-JS/static/js/453.a4602e17.chunk.js",
+    "static/media/topbaner.jpg": "/MachineCodingRound-React-JS/static/media/topbaner.71133fb1d3718859b509.jpg",
+    "index.html": "/MachineCodingRound-React-JS/index.html",
+    "main.f0efcd89.css.map": "/MachineCodingRound-React-JS/static/css/main.f0efcd89.css.map",
+    "main.c85ba8d0.js.map": "/MachineCodingRound-React-JS/static/js/main.c85ba8d0.js.map",
+    "453.a4602e17.chunk.js.map": "/MachineCodingRound-React-JS/static/js/453.a4602e17.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0efcd89.css",
+    "static/js/main.c85ba8d0.js"
+  ]
+}
